@@ -1,0 +1,79 @@
+const products = [
+    {
+      "id": "1",
+      "title": "product1",
+      "description": "bcjfbck",
+      "price": 120,
+      "image": "https://render.fineartamerica.com/images/rendered/search/print/8/8/break/images/artworkimages/medium/1/seafood-gumbo-dianne-parks.jpg"
+    },
+    {
+      "id": "2",
+      "title": "product2",
+      "description": "bcjfbck",
+      "price": 130,
+      "image": "https://render.fineartamerica.com/images/rendered/search/metal-print/10/6.5/break/images/artworkimages/medium/2/heirloom-tomatoes-at-the-farmers-market-scott-norris.jpg"
+    },
+    {
+      "id": "11b6",
+      "title": "Books",
+      "price": 12,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747151417/bncdxfo5ep05zmjosvkq.png",
+      "description": "rwkkjfbkjlv"
+    },
+    {
+      "id": "2604",
+      "title": "Books",
+      "price": 12,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747151417/bncdxfo5ep05zmjosvkq.png",
+      "description": "rwkkjfbkjlv"
+    },
+    {
+      "id": "1fe8",
+      "title": "3wrfkmmke",
+      "price": 12,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747154090/pznrrtn7gqmz1i9icdad.png",
+      "description": "dfgvcfgrv"
+    },
+    {
+      "id": "1d40",
+      "title": "3wrfkmmke",
+      "price": 12,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747154090/pznrrtn7gqmz1i9icdad.png",
+      "description": "dfgvcfgrv"
+    },
+    {
+      "id": "9c27",
+      "title": "rgfbokvoplrf",
+      "price": 123,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747155112/ssdnjcdceucm9n94kuzt.png",
+      "description": "43rgf"
+    },
+    {
+      "id": "de7b",
+      "title": "efvgc",
+      "price": 33333333333333,
+      "image": "https://res.cloudinary.com/dmgxpkcvp/image/upload/v1747156973/vk0m2tep63cjgquqbsgr.png",
+      "description": "dvg "
+    }
+]
+
+import { v4 as uuidv4 } from 'uuid';
+
+export async function GET(request){
+    return Response.json(products);
+}
+
+export async function POST(request){
+    const data = await request.json()
+
+    const newProduct = {
+        ...data,
+        id: uuidv4()
+    }
+
+    console.log(data)
+
+    products.push(newProduct);
+
+    return Response.json({message: ""}, {status: 201})
+}
