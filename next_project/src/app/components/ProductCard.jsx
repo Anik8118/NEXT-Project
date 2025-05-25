@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 
 const ProductCard = ({product}) => {
@@ -5,7 +6,14 @@ const ProductCard = ({product}) => {
     <div className="ingredient">
 			<div className="ingredient__image">
 				<figure>
-					<img src={product.image} alt={product.title} />
+					{/* <img src={product.image} alt={product.title} /> */}
+					<Image 
+					 src={product.image}
+					 alt={product.title}
+					 width={1600}
+					 height={900}
+					 />
+
 				</figure>
 			</div>
 			<div className="ingredient__title">
@@ -23,8 +31,7 @@ const ProductCard = ({product}) => {
 
 					// 	dispatch(addToCart(product));
 					// }}
-					className="btn-white"
-				>
+					className="btn-white"				>
 					ADD TO CART
 				</button>
 			</div>

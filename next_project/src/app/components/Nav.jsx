@@ -15,11 +15,19 @@ const Nav = () => {
 						</li>
 
 						<li>
+							<Link href="/static-page">Static-Page</Link>
+						</li>
+
+						<li>
 							<Link href="/add-product">Add Product</Link>
 						</li>
 
 						<li>
 							<Link href="/all-products">Products</Link>
+						</li>
+
+						<li>
+							<Link href="/posts">Posts</Link>
 						</li>
 					</ul>
 				</nav>
